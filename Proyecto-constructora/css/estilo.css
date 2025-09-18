@@ -1,0 +1,206 @@
+body {
+    transition: background-color 0.5s ease;
+}
+
+.navbar-brand {
+    color: white;
+    cursor: pointer;
+    margin-right: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+.navbar-brand:hover {
+    filter: brightness(85%);
+}
+.nav-inicio { background-color: orange; }
+.nav-nosotros { background-color: royalblue; }
+.nav-servicios { background-color: lightgreen; }
+.nav-contactos { background-color: skyblue; }
+
+.nav-activo {
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    border: 2px solid white;
+}
+/* Estilos para la sección de servicios */
+.text-with-image {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.text-primary {
+    color: #0d6efd; /* Color primario de Bootstrap */
+}
+
+/* Contenedor de la carta */
+.card-container {
+    perspective: 1000px; /* Define la perspectiva para el efecto 3D */
+}
+
+/* Carta 3D */
+.card-3d {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Altura fija para las cartas */
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+}
+
+/* Efecto de volteo al pasar el cursor */
+.card-container:hover .card-3d {
+    transform: rotateY(180deg);
+}
+
+/* Caras frontal y trasera */
+.card-front, .card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Oculta la cara trasera cuando no está visible */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+/* Cara frontal */
+.card-front {
+    z-index: 2;
+}
+
+/* Cartas 3D */
+        .card-container {
+            perspective: 1000px;
+            margin-bottom: 30px;
+        }
+        
+        .card-3d {
+            width: 100%;
+            height: 350px;
+            transform-style: preserve-3d;
+            transition: transform 0.8s;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            cursor: pointer;
+        }
+        
+        .card-container:hover .card-3d {
+            transform: rotateY(180deg);
+        }
+        
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .card-front {
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .card-back {
+            background: white;
+            color: var(--dark);
+            transform: rotateY(180deg);
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .card-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .card-3d {
+        height: 250px; /* Reducir altura en pantallas pequeñas */
+    }
+
+    .card-icon {
+        font-size: 2.5rem;
+    }
+
+    .card-front h3, .card-back h3 {
+        font-size: 1.3rem;
+    }
+
+    .card-front p, .card-back p {
+        font-size: 0.9rem;
+    }
+}
+.gallery-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .gallery-desc {
+            font-size: 1rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
